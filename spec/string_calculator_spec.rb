@@ -18,5 +18,13 @@ RSpec.describe StringCalculator do
         expect(string_calculator.instance_variable_get(:@parsed_input)).to eq([1, 2, 3])
       end
     end
+
+    context 'when input string contains custom delimiters' do
+      let(:input_string) { "//;\n1;2" }
+      it 'sets instance variable' do
+        expect(string_calculator.instance_variable_get(:@input_string)).to eq("//;\n1;2")
+        expect(string_calculator.instance_variable_get(:@parsed_input)).to eq([1, 2])
+      end
+    end
   end
 end
