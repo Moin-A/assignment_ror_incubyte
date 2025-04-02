@@ -27,4 +27,13 @@ RSpec.describe Calculator::StringCalculator do
       end
     end
   end
+
+  describe '#add' do
+    context 'when input string is empty' do
+      let(:input_string) { '' }
+      it 'returns 0' do
+        expect(string_calculator.add).to eq(0)
+      end
+    end
+  end
 end
