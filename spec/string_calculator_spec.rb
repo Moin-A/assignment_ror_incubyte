@@ -35,5 +35,12 @@ RSpec.describe Calculator::StringCalculator do
         expect(string_calculator.add).to eq(0)
       end
     end
+
+    context 'when input string contains single number' do
+      let(:input_string) { '1' }
+      it 'returns the number' do
+        expect(string_calculator.add).to eq(1)
+      end
+    end
   end
 end
