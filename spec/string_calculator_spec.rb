@@ -56,5 +56,12 @@ RSpec.describe Calculator::StringCalculator do
         expect(string_calculator.add).to eq(6)
       end
     end
+
+    context 'when input string contains custom delimiters' do
+      let(:input_string) { "//;\n1;2" }
+      it 'returns the sum of numbers' do
+        expect(string_calculator.add).to eq(3)
+      end
+    end
   end
 end
