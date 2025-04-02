@@ -70,5 +70,12 @@ RSpec.describe Calculator::StringCalculator do
         expect { string_calculator.add }.to raise_error('negatives not allowed: -2')
       end
     end
+
+    context 'when input string contains negative numbers with custom delimiters' do
+      let(:input_string) { "//;\n1;-2;3" }
+      it 'raises an error' do
+        expect { string_calculator.add }.to raise_error('negatives not allowed: -2')
+      end
+    end
   end
 end
