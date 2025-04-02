@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 module Calculator
+  class CalculationError < StandardError; end
+
   class Base
     DELIMITERS_PATTERN = %r{\\n|\n|//|;}.freeze
     def initialize(input_string)
