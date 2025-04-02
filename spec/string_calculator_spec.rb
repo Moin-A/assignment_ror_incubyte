@@ -42,5 +42,12 @@ RSpec.describe Calculator::StringCalculator do
         expect(string_calculator.add).to eq(1)
       end
     end
+
+    context 'when input string contains multiple numbers' do
+      let(:input_string) { '1,2,3' }
+      it 'returns the sum of numbers' do
+        expect(string_calculator.add).to eq(6)
+      end
+    end
   end
 end
