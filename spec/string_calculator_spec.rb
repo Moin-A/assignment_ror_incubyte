@@ -3,9 +3,9 @@
 require 'rspec'
 require_relative '../app/string_calculator'
 
-RSpec.describe StringCalculator do
+RSpec.describe Calculator::StringCalculator do
   let(:input_string) { '1,2,3' }
-  let(:string_calculator) { StringCalculator.new input_string }
+  let(:string_calculator) { described_class.new input_string }
   describe '#initialize' do
     it 'sets instance variable' do
       expect(string_calculator.instance_variable_get(:@input_string)).to eq('1,2,3')
